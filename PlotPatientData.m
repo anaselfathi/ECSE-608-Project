@@ -72,15 +72,15 @@ p1 = plot(time_grade, basal_grade, 'b');
 BolusExist = 0;
 for n = 1:1:T/dt
     if(data.I_bolus(n) > 0)
-        p2 = plot(data.Time(n), 2.5, 'Marker','v','MarkerSize', 10, 'MarkerEdgeColor','b', 'MarkerFaceColor','b');
-        text(data.Time(n), 2.5, ['    ' num2str(data.I_bolus(n)) ' U'],'Color','b', 'FontSize', 8, 'FontWeight', 'bold');
+        p2 = plot(data.Time(n), 3.5, 'Marker','v','MarkerSize', 10, 'MarkerEdgeColor','b', 'MarkerFaceColor','b');
+        text(data.Time(n), 3.5, ['    ' num2str(data.I_bolus(n)) ' U'],'Color','b', 'FontSize', 8, 'FontWeight', 'bold');
         BolusExist = 1;
     end
 end
 ax = gca;
 ax.XTick = 0:2*60:T;
 ax.XTickLabel = {mod(TStart:2:TStart+T/60,24)};
-ylim([0 max(3, max(data.I_basal)+0.5)])
+ylim([0 max(4, max(data.I_basal)+0.5)])
 xlim([0 T])
 ylabel('Delivred Insulin (U/h)')
 xlabel('Time (h)')

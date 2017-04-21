@@ -22,7 +22,9 @@ opt.algo = 1; %0: DQN, 1:DDQN
 %Simulation pauses after each day
 opt.stepPerStep = 0;
 % nominal test
-opt.nominalTest = 1;
+%1: nothing is random and the test is repeatable with fixed values
+%0: test random scenarios
+opt.nominalTest = 1; 
 %% Init variable
 dt = 10;
 
@@ -470,8 +472,8 @@ while(nBatch < rl.totBatches)
     hold on
     for n = 1:1:length(UBolus)
         if(UBolus(n) > 0)
-            plot(sys.Time(n), 2.5, 'Marker','v','MarkerSize', 10, 'MarkerEdgeColor','g', 'MarkerFaceColor','g');
-            text(sys.Time(n), 2.5, ['    ' num2str(UBolus(n)) ' U'],'Color','r', 'FontSize', 8, 'FontWeight', 'bold');
+            plot(sys.Time(n), 3.5, 'Marker','v','MarkerSize', 10, 'MarkerEdgeColor','g', 'MarkerFaceColor','g');
+            text(sys.Time(n), 3.5, ['    ' num2str(UBolus(n)) ' U'],'Color','r', 'FontSize', 8, 'FontWeight', 'bold');
         end
     end
     if(opt.simMode == 0 && rl.explore < 1e-5)
