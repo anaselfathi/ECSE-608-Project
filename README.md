@@ -8,4 +8,3 @@ The safety agent should continuously observe the patient state and action, under
 The purpose of this work is to train an agent using reinforcement learning techniques in order to provide automatic bolus correction for artificial pancreas control systems.
 
 Please find instructions in the main file is DeepNetBolusing.m.
-Anas
